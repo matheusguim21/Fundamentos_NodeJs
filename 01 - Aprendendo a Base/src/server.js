@@ -21,10 +21,12 @@ const server = http.createServer(async(req, res) => {
 
     console.log(extractQueryParams(routeParams.groups.query))
 
-    
+     const { query, ...params} = routeParams.groups
+
+     req.params = params
+     req.query = query ? extractQueryParams(query) : {}
 
     console.log("Grupos: ", routeParams.groups)
-    req.params = {...routeParams.groups} 
 
     return route.handler(req, res)
   }

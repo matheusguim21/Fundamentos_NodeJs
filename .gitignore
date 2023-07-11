@@ -1,1 +1,2 @@
-02-API_REST_NODE_JS/node_modules
+node_modules
+tmp/app.db
